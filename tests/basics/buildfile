@@ -1,3 +1,3 @@
-import libs = libleftpad%lib{leftpad}
+import libs = libleftpad%lib{leftpad} catch2%lib{catch2}
 
 exe{driver}: {hxx ixx txx cxx}{**} $libs testscript{**}

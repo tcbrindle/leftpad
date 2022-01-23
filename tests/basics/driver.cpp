@@ -6,29 +6,28 @@
 #include <libleftpad/version.hpp>
 #include <libleftpad/leftpad.hpp>
 
-#undef NDEBUG
-#include <cassert>
+#include <catch2/catch.hpp>
 
-int main ()
+TEST_CASE("leftpad testing")
 {
     using lp::leftpad;
 
-    assert(leftpad("foo", 2) == "foo");
-    assert(leftpad("foo", 3) == "foo");
-    assert(leftpad("foo", 5) == "  foo");
-    assert(leftpad("foo", 12) == "         foo");
-    assert(leftpad("foo", 13) == "          foo");
+    REQUIRE(leftpad("foo", 2) == "foo");
+    REQUIRE(leftpad("foo", 3) == "foo");
+    REQUIRE(leftpad("foo", 5) == "  foo");
+    REQUIRE(leftpad("foo", 12) == "         foo");
+    REQUIRE(leftpad("foo", 13) == "          foo");
 
-    assert(leftpad("foo", 2, ' ') == "foo");
-    assert(leftpad("foo", 3, ' ') == "foo");
-    assert(leftpad("foo", 5, ' ') == "  foo");
-    assert(leftpad("foo", 12, ' ') == "         foo");
-    assert(leftpad("foo", 13, ' ') == "          foo");
+    REQUIRE(leftpad("foo", 2, ' ') == "foo");
+    REQUIRE(leftpad("foo", 3, ' ') == "foo");
+    REQUIRE(leftpad("foo", 5, ' ') == "  foo");
+    REQUIRE(leftpad("foo", 12, ' ') == "         foo");
+    REQUIRE(leftpad("foo", 13, ' ') == "          foo");
 
-    assert(leftpad("1", 2, '0') == "01");
-    assert(leftpad("1", 2, '-') == "-1");
-    assert(leftpad("foo", 4, '*') == "*foo");
-    assert(leftpad("foo", 5, '*') == "**foo");
-    assert(leftpad("foo", 6, '*') == "***foo");
-    assert(leftpad("foo", 103, '*') == "****************************************************************************************************foo");
+    REQUIRE(leftpad("1", 2, '0') == "01");
+    REQUIRE(leftpad("1", 2, '-') == "-1");
+    REQUIRE(leftpad("foo", 4, '*') == "*foo");
+    REQUIRE(leftpad("foo", 5, '*') == "**foo");
+    REQUIRE(leftpad("foo", 6, '*') == "***foo");
+    REQUIRE(leftpad("foo", 103, '*') == "****************************************************************************************************foo");
 }

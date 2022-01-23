@@ -8,6 +8,6 @@ description-file: README.md
 url: https://github.com/tcbrindle/libleftpad
 email: t.c.brindle@gmail.com
 build-error-email: t.c.brindle@gmail.com
+depends: catch2 ^2.13.0
 depends: * build2 >= 0.14.0
 depends: * bpkg >= 0.14.0
-depends: * catch2 ^2.13.0

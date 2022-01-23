@@ -1,0 +1,3 @@
+import libs = libleftpad%lib{leftpad}
+
+exe{driver}: {hxx ixx txx cxx}{**} $libs testscript{**}

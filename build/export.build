@@ -1,0 +1,6 @@
+$out_root/
+{
+  include libleftpad/
+}
+
+export $out_root/libleftpad/$import.target

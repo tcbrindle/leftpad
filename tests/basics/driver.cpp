@@ -6,7 +6,7 @@
 #include <libleftpad/version.hpp>
 #include <libleftpad/leftpad.hpp>
 
-#include <catch2/catch.hpp>
+#include "catch.hpp"
 
 TEST_CASE("leftpad testing")
 {
